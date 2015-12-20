@@ -1,0 +1,113 @@
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HonMaple</title>
+
+        {% assets "home_js" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+        {% assets "home_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+        {% endassets %}
+        <style type="text/css">
+            html,body{height:100%}
+            .container {width:100%;}
+            .footer {margin-top:-30px;height:30px;}
+            .wrap{min-height:100%}
+            .main{padding-bottom:30px;overflow:hidden;}
+            ul {margin:0;padding:0;}
+            li {
+                list-style:none;
+            }
+            .category {
+                padding:15px;background:#fff;
+                border: 1px solid #ddd;border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="main" style="padding:0 20%">
+                <h4>
+                    上位机
+                </h4>
+                {{ form.hidden_tag()}}
+                {{ form.display(class="form-control",rows='9') }}
+                <br />
+                <div class="row">
+                    <div class="col-sm-1">
+                        {{ form.input_box.label }}
+                    </div>
+                    <div class="col-sm-7">
+                        {{ form.input_box(class="form-control") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.post(class="btn btn-primary") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.delete(class="btn btn-primary") }}
+                    </div>
+                    <div class="col-sm-2">
+                        {{ form.hex_display() }}
+                        {{ form.hex_display.label }}
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-1">
+                        {{ form.serial_num.label }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form.serial_num(class="form-control") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.baud_rate.label }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form.baud_rate(class="form-control") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.open_serial(class="btn btn-primary") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.expand(class="btn btn-primary") }}
+                    </div>
+                    <div class="col-sm-2">
+                        {{ form.hex_post() }}
+                        {{ form.hex_post.label }}
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-1">
+                        {{ form.data_bit.label }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form.data_bit(class="form-control") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.check_bit.label }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form.check_bit(class="form-control") }}
+                    </div>
+                    <div class="col-sm-1">
+                        {{ form.stop_bit.label }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form.stop_bit(class="form-control") }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer">
+            <div style="text-align:center">
+                Copyright © 2015 JiangLin. All rights reserved.
+            </div>
+        </div>
+    </body>
+</html>
+
