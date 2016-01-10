@@ -404,9 +404,9 @@ class SerialUpper(QtGui.QWidget):
         self.receive_data_label.clear()
 
     def do_save_data(self):
-        conn = psycopg2.connect(database="ipdb", \
+        conn = psycopg2.connect(database="数据库名", \
                                 user="postgres", \
-                                password="qaz123", \
+                                password="数据库密码", \
                                 host="127.0.0.1", \
                                 port="5432")
         c51 = conn.cursor()
