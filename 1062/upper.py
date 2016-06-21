@@ -612,10 +612,16 @@ class SerialUpper(QtGui.QWidget):
         self.doPost('query', 'other')
 
     def do_cha_input_data(self):
-        self.func = '08'
-        self.datalen = self.count_data_len()
-        self.lrcvalue = self.count_lrc_value()
-        self.doPost('query', 'other')
+        data = '#' + self.post_data_input.text() + '@'
+        self.ser.write(data.encode('utf-8'))
+        sleep(.1)
+        receive_byte = self.ser.readall()
+        receive_byte = receive_byte.decode("utf-8", "backslashreplace")
+        self.report_down_now.setText('hello world')
+        # self.func = '08'
+        # self.datalen = self.count_data_len()
+        # self.lrcvalue = self.count_lrc_value()
+        # self.doPost('query', 'other')
 
     def start(self):
         self.lead = '#'
